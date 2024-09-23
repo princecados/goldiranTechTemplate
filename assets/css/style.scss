@@ -1,0 +1,416 @@
+/* ────────────────────────────────────────────
+ Author: PrinceCados
+ URL: https://goldiran.ir/
+
+ Template Name: PWA Goldiran Technician
+ version: 1.0.0
+──────────────────────────────────────────── */
+/* ────────────────────────────────────────────
+
+├──global
+  ├──font
+  ├──myglobal
+  |  ├───basic-color
+  └──bootstrap
+  
+  ├──pixel-perfect
+  └──header
+
+├──main-section
+
+
+├──footer
+   └── copyright
+   
+   ──────────────────────────────────────────── */
+
+// ===========================> Global CSS <=====================
+
+// ───────────────────────────────── Start **Font
+// =======================> Add SpaceGrotesk Fonts
+@font-face {
+    font-family: iranSans;
+    src: url("../fonts/iransans/woff/IRANSansX-Black.woff") format("truetype");
+    font-weight: bolder;
+}
+@font-face {
+    font-family: iranSans;
+    src: url("../fonts/iransans/woff/IRANSansX-Bold.woff") format("truetype");
+    font-weight: bold;
+}
+  
+@font-face {
+    font-family: iranSans;
+    src: url("../fonts/iransans/woff/IRANSansX-Medium.woff") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: iranSans;
+    src: url("../fonts/iransans/woff/IRANSansX-Regular.woff") format("truetype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: iranSans;
+    src: url("../fonts/iransans/woff/IRANSansX-Light.woff") format("truetype");
+    font-weight: light;
+}
+  
+  
+  // ───────────────────────────────── Start **myglobal
+  // --------------------------------------------------
+  html, body{
+    margin: 0;
+
+    padding: 0;
+
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+  body{
+        font-family: iranSans;
+        overflow: hidden;
+        background-color: #fff;
+        direction: rtl;     
+    }
+    .main{
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+        // ───────────────────────────────── input Style
+
+    .input-box{
+        position: relative;
+        margin-bottom: 20px;
+        padding-top: 15px;
+        &.input-icon{
+            label{
+                right: 35px;
+            }
+            input{
+                padding-right: 35px;
+            }
+        }
+        svg{
+            position: absolute;
+            right: 0;
+            top: calc(50% + 3px);
+            transform: translateY(-50%);
+        }
+        label{
+            position: absolute;
+            font-size: 12px;
+            font-weight: 500;
+            color: #ADADAD;
+            right: 10px;
+            top: calc(50% + 3px);
+            transform: translateY(-50%);
+            transition: transform 0.1s;
+            pointer-events: none;
+        }
+        input{
+            padding-right: 10px;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #A9A9A9;
+            outline: none;
+            font-size: 12px;
+            font-weight: 500;
+            padding-bottom: 10px;
+            &:focus { border-color: black; }
+            // &:focus ~ svg path{ stroke: #646464; }
+    
+            &:focus ~ label {
+            transform: translateY(-25px);
+            font-size: 9px;
+            }
+            &:not(:placeholder-shown) ~ label {
+            transform: translateY(-25px);
+            font-size: 9px;
+            }
+            // &:not(:placeholder-shown) ~ svg path{ stroke: #646464; }        
+        }
+        
+
+    }
+        // ───────────────────────────────── Button Style
+
+        .btn{
+            font-size: 14px;
+            font-weight: 500;
+            color: black;
+            border-radius: 20px;
+            border: 1px solid #646464;
+            padding: 8px 10px;
+            width: 220px;
+            max-width: 100%;
+            margin: 5px auto;
+            display: block;
+            &.success-btn{
+                border-color: #28A745;
+                background-color: #28A745;
+                color: white;
+            }
+            &.danger-btn{
+                border-color: #D71729;
+            }
+        }
+
+
+  // ───────────────────────────────── End **myglobal
+  // ------------------------------------------------
+
+
+  // ───────────────────────────────── Start **LoginPage
+  // ---------------------------------------------------
+
+    
+    .login-header-bg{
+        position: relative;
+        width: 100%;
+        margin-top: -5px;
+        height: 330px;
+        background-color: #D71729;
+        &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../img/wallpaper.jpg');
+            background-size: cover;
+            opacity: 0.13;
+
+        }
+        .login-mask{
+            width: calc(100% + 2px);
+            position: absolute;
+            bottom: -1px;
+            left: -1px
+        }
+        img{
+            width: 100%;
+        }
+    }
+    @media only screen and (min-width: 600px) {
+        .login-mask{display: none;}
+    }
+    .login-logo{
+        position: absolute;
+        width: 180px !important;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+    }
+
+    .password-box{
+        max-width: 300px;
+        margin: 50px auto 30px auto;
+        min-height: 200px;
+        text-align: center;
+        position: relative;
+        &.otp-success:before{
+            position: absolute;
+            content: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.4167 27.0833L22.75 31.4166L33.5834 20.5833' stroke='%2301BD2A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.1666 7.23186C18.3535 5.38835 22.0536 4.33325 26 4.33325C37.966 4.33325 47.6666 14.0337 47.6666 25.9999C47.6666 37.966 37.966 47.6666 26 47.6666C14.0338 47.6666 4.33331 37.966 4.33331 25.9999C4.33331 22.0536 5.38841 18.3535 7.23192 15.1666' stroke='%2301BD2A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+            width: 50px;
+            height: 50px;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+        }
+        .title{
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .subtitle{
+            font-size: 13px;
+            font-weight: bold;
+            color: #9B9B9B;
+            margin-bottom: 20px;
+        }
+    }
+    .toggle-password{
+        content: '';
+        width: 15px;
+        height: 15px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: calc(50% + 3px);
+        transform: translateY(-50%);
+        background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.36594 2.94775C7.20807 2.11001 9.45563 2.44772 10.9724 3.96449L12.8485 5.8406C12.8674 5.85945 12.886 5.87808 12.9045 5.89652C13.1589 6.15032 13.3787 6.36955 13.5116 6.6193C13.8045 7.16992 13.8045 7.83017 13.5116 8.38074C13.3787 8.63049 13.1589 8.84974 12.9045 9.10349C12.886 9.12199 12.8674 9.14061 12.8485 9.15942L12.816 9.19199C12.5719 9.43605 12.1762 9.43605 11.9321 9.19199C11.688 8.94786 11.688 8.55217 11.9321 8.30811L11.9646 8.27555C12.3074 7.9328 12.3753 7.85524 12.4081 7.79361C12.5057 7.61005 12.5057 7.38999 12.4081 7.20642C12.3753 7.1448 12.3074 7.06724 11.9646 6.72449L10.0885 4.84837C8.95213 3.71201 7.26669 3.45655 5.88339 4.08562C5.56918 4.22851 5.19862 4.08963 5.05573 3.77542C4.91284 3.4612 5.05172 3.09065 5.36594 2.94775Z' fill='%23B0B0B0'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.48877 2.82249C1.70069 2.55002 2.09337 2.50094 2.36583 2.71286L13.6158 11.4629C13.8883 11.6747 13.9374 12.0674 13.7254 12.3399C13.5136 12.6124 13.1209 12.6615 12.8484 12.4496L10.9978 11.0102L10.9725 11.0356C9.01994 12.9882 5.85408 12.9882 3.90147 11.0356L2.54655 9.68062C2.15475 9.28887 1.81717 8.95131 1.58319 8.64469C1.33244 8.316 1.14258 7.9505 1.14258 7.5C1.14258 7.0495 1.33244 6.684 1.58319 6.35537C1.81717 6.04869 2.15475 5.71114 2.54655 5.31939L3.0429 4.82304L1.59841 3.69955C1.32594 3.48763 1.27685 3.09496 1.48877 2.82249ZM7.97288 8.6575L9.02844 9.4785C8.60588 9.80543 8.07563 10 7.5 10C6.11929 10 5 8.88075 5 7.5C5 7.1465 5.07338 6.81012 5.20574 6.50525L6.26194 7.32675C6.25407 7.38337 6.25 7.44125 6.25 7.5C6.25 8.19037 6.80963 8.75 7.5 8.75C7.66738 8.75 7.827 8.71712 7.97288 8.6575Z' fill='%23B0B0B0'/%3E%3C/svg%3E%0A");
+        &.show-pass{
+            background-image:url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 7.5C5 6.11929 6.11929 5 7.5 5C8.88069 5 10 6.11929 10 7.5C10 8.88069 8.88069 10 7.5 10C6.11929 10 5 8.88069 5 7.5ZM3.90147 3.96447C5.85408 2.01184 9.01994 2.01184 10.9725 3.96447L12.3274 5.31937C12.7193 5.71113 13.0568 6.04867 13.2908 6.35531C13.5416 6.684 13.7314 7.0495 13.7314 7.5C13.7314 7.9505 13.5416 8.316 13.2908 8.64469C13.0568 8.95131 12.7193 9.28887 12.3274 9.68062L10.9725 11.0356C9.01994 12.9881 5.85408 12.9881 3.90147 11.0356L2.54655 9.68062C2.15475 9.28887 1.81717 8.95131 1.58319 8.64469C1.33244 8.316 1.14258 7.9505 1.14258 7.5C1.14258 7.0495 1.33244 6.684 1.58319 6.35531C1.81717 6.04867 2.15475 5.71113 2.54655 5.31938C2.55622 5.30972 2.56591 5.30002 2.57564 5.29029L3.90147 3.96447Z' fill='%23AEAEAE'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.5 6.25C6.80963 6.25 6.25 6.80963 6.25 7.5C6.25 8.19037 6.80963 8.75 7.5 8.75C8.19037 8.75 8.75 8.19037 8.75 7.5C8.75 6.80963 8.19037 6.25 7.5 6.25Z' fill='%23AEAEAE'/%3E%3C/svg%3E%0A");
+        }
+
+    }
+    .version{
+        font-size: 10px;
+        color: #300604;
+        font-weight: normal;
+    }
+    .change-login-type{
+        margin-top: auto;
+        margin-bottom: 10px;
+        span{
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            color: #9B9B9B;
+            margin-bottom: 10px;
+        }
+    }
+    .login-type-btn{
+        display: flex;
+        align-items: center;
+        .login-type-item{
+            cursor: pointer;
+            margin: 5px 10px;
+            svg path{
+                stroke: #D9D9D9;
+            }
+            &.active{
+                svg path{
+                    stroke: #9B9B9B;
+                }
+            }
+        }
+    }
+    .h-login{
+        height: calc(100% - 330px);
+        padding-bottom: 30px;
+    }
+    .forget-password-modal{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        &:before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            z-index: 2;
+        }
+        .modal-card{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 15px 25px;
+            transform: translate(-50% , -50%);
+            background-color: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 320px;
+            z-index: 3;
+            .title{
+                font-size: 14px;
+                font-weight: bold;
+                color: black;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .otp-code{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input{
+            width: 55px;
+            height: 55px;
+            margin: 5px;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            background-color: #e7e7e7;
+            text-align: center;
+            font-size: 28px;
+            color: black;
+            &:focus { 
+                color: white;
+                background-color: #D71729;
+            }    
+            // &:not(:placeholder-shown) {
+            //     background-color: #D71729;
+
+            // }
+
+        }
+    }
+    .otp-timer{
+        margin-top: 25px;
+        .counter{
+            font-size: 11px;
+            font-weight: bold;
+            color: #9B9B9B;
+            span{
+                color: #D71729;
+            }
+        }
+        .edit-number{
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #0092C8;
+            cursor: pointer;
+        }
+    }
+
+    .finger-print{
+        margin-top: 50px;
+        &.active{
+            svg path{
+                fill: #01BD2A;
+            }
+        }
+    }
+
+    // ───────────────────────────────── End **LoginPage
+    // -----------------------------------------------
+
+    // ───────────────────────────────── Start **SplashPage
+    // ---------------------------------------------------
+    .splash-page{
+        background-color: #D71729;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .logo{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 220px;
+            height: auto;
+            transform: translate(-50% , -50%);
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 75px;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background-image: url(../img/pattern.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-repeat: repeat-y;
+        }
+    }
