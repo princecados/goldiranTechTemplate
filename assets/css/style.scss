@@ -297,6 +297,7 @@ footer:before {
     font-size: 12px;
     font-weight: 500;
     padding-bottom: 10px;
+    background-color: transparent;
 
     &:focus {
       border-color: black;
@@ -329,6 +330,45 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+// ───────────────────────────────── Select Style
+.select-box {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.7657 0H5.574H0.898977C0.0989767 0 -0.301023 0.966666 0.265643 1.53334L4.58233 5.85001C5.274 6.54167 6.399 6.54167 7.09067 5.85001L8.73233 4.20834L11.4073 1.53334C11.9657 0.966666 11.5657 0 10.7657 0Z' fill='%23646464'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: 15px;
+    border: none;
+    outline: none;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #a9a9a9;
+    &:focus {
+        border-color: black !important;
+        background-color: transparent !important;
+    }
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 500;
+    color: #b5b5b5;
+  }
+  select:required:invalid {
+    color: gray;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: black;
+  }
+  select:invalid {
+    color: #999;
+    font-weight: normal;
+  }
+}
 // ───────────────────────────────── Button Style
 
 .btn {
@@ -1048,17 +1088,16 @@ input[type="number"] {
       font-size: 10px;
       color: black;
       font-weight: 500;
-
     }
-    &.part-timer{
-        background-color: #FFE9EC;
-        span{
-            color: #D7162E;
-            margin: 0 3px;
-        }
-        &:before{
-            content: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1249_4269)'%3E%3Cpath d='M6.875 8.57687C6.68508 8.46845 6.52721 8.31173 6.41741 8.12261C6.3076 7.93349 6.24977 7.71869 6.24977 7.5C6.24977 7.28131 6.3076 7.06651 6.41741 6.87739C6.52721 6.68827 6.68508 6.53155 6.875 6.42313V4.375C6.875 4.20924 6.94085 4.05027 7.05806 3.93306C7.17527 3.81585 7.33424 3.75 7.5 3.75C7.66576 3.75 7.82473 3.81585 7.94194 3.93306C8.05915 4.05027 8.125 4.20924 8.125 4.375V6.42313C8.31492 6.53155 8.47279 6.68827 8.58259 6.87739C8.6924 7.06651 8.75023 7.28131 8.75023 7.5C8.75023 7.71869 8.6924 7.93349 8.58259 8.12261C8.47279 8.31173 8.31492 8.46845 8.125 8.57687V10C8.125 10.1658 8.05915 10.3247 7.94194 10.4419C7.82473 10.5592 7.66576 10.625 7.5 10.625C7.33424 10.625 7.17527 10.5592 7.05806 10.4419C6.94085 10.3247 6.875 10.1658 6.875 10V8.57687ZM7.5 0C7.33424 0 7.17527 0.065848 7.05806 0.183058C6.94085 0.300269 6.875 0.45924 6.875 0.625C6.875 0.79076 6.94085 0.949732 7.05806 1.06694C7.17527 1.18415 7.33424 1.25 7.5 1.25C9.1576 1.25 10.7473 1.90848 11.9194 3.08058C13.0915 4.25269 13.75 5.8424 13.75 7.5C13.75 9.1576 13.0915 10.7473 11.9194 11.9194C10.7473 13.0915 9.1576 13.75 7.5 13.75C7.33424 13.75 7.17527 13.8158 7.05806 13.9331C6.94085 14.0503 6.875 14.2092 6.875 14.375C6.875 14.5408 6.94085 14.6997 7.05806 14.8169C7.17527 14.9342 7.33424 15 7.5 15C9.48912 15 11.3968 14.2098 12.8033 12.8033C14.2098 11.3968 15 9.48912 15 7.5C15 5.51088 14.2098 3.60322 12.8033 2.1967C11.3968 0.790176 9.48912 0 7.5 0ZM1.14188 4.24C1.01826 4.24 0.897425 4.27666 0.794644 4.34533C0.691863 4.41401 0.611755 4.51162 0.564451 4.62582C0.517146 4.74003 0.504769 4.86569 0.528884 4.98693C0.553 5.10817 0.612526 5.21953 0.699934 5.30694C0.787341 5.39435 0.898706 5.45387 1.01994 5.47799C1.14118 5.50211 1.26685 5.48973 1.38105 5.44242C1.49526 5.39512 1.59287 5.31501 1.66154 5.21223C1.73022 5.10945 1.76688 4.98861 1.76688 4.865C1.76688 4.69924 1.70103 4.54027 1.58382 4.42306C1.46661 4.30585 1.30764 4.24 1.14188 4.24ZM1.25 7.5C1.25 7.37639 1.21334 7.25555 1.14467 7.15277C1.07599 7.04999 0.978381 6.96988 0.864177 6.92257C0.749974 6.87527 0.624307 6.86289 0.503069 6.88701C0.381831 6.91112 0.270466 6.97065 0.183059 7.05806C0.0956507 7.14547 0.0361252 7.25683 0.0120095 7.37807C-0.0121063 7.49931 0.000270801 7.62497 0.0475756 7.73918C0.0948803 7.85338 0.174988 7.95099 0.277769 8.01967C0.38055 8.08834 0.501387 8.125 0.625 8.125C0.790761 8.125 0.949732 8.05915 1.06694 7.94194C1.18415 7.82473 1.25 7.66576 1.25 7.5ZM2.63813 2.00437C2.51451 2.00437 2.39367 2.04103 2.29089 2.10971C2.18811 2.17838 2.10801 2.27599 2.0607 2.3902C2.0134 2.5044 2.00102 2.63007 2.02513 2.75131C2.04925 2.87254 2.10878 2.98391 2.19618 3.07132C2.28359 3.15872 2.39496 3.21825 2.51619 3.24237C2.63743 3.26648 2.7631 3.2541 2.8773 3.2068C2.99151 3.15949 3.08912 3.07939 3.15779 2.97661C3.22647 2.87383 3.26313 2.75299 3.26313 2.62937C3.26313 2.46361 3.19728 2.30464 3.08007 2.18743C2.96286 2.07022 2.80389 2.00437 2.63813 2.00437ZM4.86188 0.525625C4.73826 0.525625 4.61742 0.562281 4.51464 0.630957C4.41186 0.699632 4.33176 0.797244 4.28445 0.911448C4.23715 1.02565 4.22477 1.15132 4.24888 1.27256C4.273 1.39379 4.33253 1.50516 4.41993 1.59257C4.50734 1.67997 4.61871 1.7395 4.73994 1.76362C4.86118 1.78773 4.98685 1.77535 5.10105 1.72805C5.21526 1.68074 5.31287 1.60064 5.38154 1.49786C5.45022 1.39508 5.48688 1.27424 5.48688 1.15062C5.48688 0.984865 5.42103 0.825894 5.30382 0.708683C5.18661 0.591473 5.02764 0.525625 4.86188 0.525625ZM1.14188 9.51C1.01826 9.51 0.897425 9.54666 0.794644 9.61533C0.691863 9.68401 0.611755 9.78162 0.564451 9.89582C0.517146 10.01 0.504769 10.1357 0.528884 10.2569C0.553 10.3782 0.612526 10.4895 0.699934 10.5769C0.787341 10.6643 0.898706 10.7239 1.01994 10.748C1.14118 10.7721 1.26685 10.7597 1.38105 10.7124C1.49526 10.6651 1.59287 10.585 1.66154 10.4822C1.73022 10.3795 1.76688 10.2586 1.76688 10.135C1.76688 9.96924 1.70103 9.81027 1.58382 9.69306C1.46661 9.57585 1.30764 9.51 1.14188 9.51ZM2.63813 11.7456C2.51451 11.7456 2.39367 11.7823 2.29089 11.851C2.18811 11.9196 2.10801 12.0172 2.0607 12.1314C2.0134 12.2457 2.00102 12.3713 2.02513 12.4926C2.04925 12.6138 2.10878 12.7252 2.19618 12.8126C2.28359 12.9 2.39496 12.9595 2.51619 12.9836C2.63743 13.0077 2.7631 12.9954 2.8773 12.948C2.99151 12.9007 3.08912 12.8206 3.15779 12.7179C3.22647 12.6151 3.26313 12.4942 3.26313 12.3706C3.26313 12.2049 3.19728 12.0459 3.08007 11.9287C2.96286 11.8115 2.80389 11.7456 2.63813 11.7456ZM4.86188 13.2244C4.73826 13.2244 4.61742 13.261 4.51464 13.3297C4.41186 13.3984 4.33176 13.496 4.28445 13.6102C4.23715 13.7244 4.22477 13.8501 4.24888 13.9713C4.273 14.0925 4.33253 14.2039 4.41993 14.2913C4.50734 14.3787 4.61871 14.4383 4.73994 14.4624C4.86118 14.4865 4.98685 14.4741 5.10105 14.4268C5.21526 14.3795 5.31287 14.2994 5.38154 14.1966C5.45022 14.0938 5.48688 13.973 5.48688 13.8494C5.48688 13.6836 5.42103 13.5246 5.30382 13.4074C5.18661 13.2902 5.02764 13.2244 4.86188 13.2244Z' fill='%23D7162E'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1249_4269'%3E%3Crect width='15' height='15' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") !important;
-        }
+    &.part-timer {
+      background-color: #ffe9ec;
+      span {
+        color: #d7162e;
+        margin: 0 3px;
+      }
+      &:before {
+        content: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1249_4269)'%3E%3Cpath d='M6.875 8.57687C6.68508 8.46845 6.52721 8.31173 6.41741 8.12261C6.3076 7.93349 6.24977 7.71869 6.24977 7.5C6.24977 7.28131 6.3076 7.06651 6.41741 6.87739C6.52721 6.68827 6.68508 6.53155 6.875 6.42313V4.375C6.875 4.20924 6.94085 4.05027 7.05806 3.93306C7.17527 3.81585 7.33424 3.75 7.5 3.75C7.66576 3.75 7.82473 3.81585 7.94194 3.93306C8.05915 4.05027 8.125 4.20924 8.125 4.375V6.42313C8.31492 6.53155 8.47279 6.68827 8.58259 6.87739C8.6924 7.06651 8.75023 7.28131 8.75023 7.5C8.75023 7.71869 8.6924 7.93349 8.58259 8.12261C8.47279 8.31173 8.31492 8.46845 8.125 8.57687V10C8.125 10.1658 8.05915 10.3247 7.94194 10.4419C7.82473 10.5592 7.66576 10.625 7.5 10.625C7.33424 10.625 7.17527 10.5592 7.05806 10.4419C6.94085 10.3247 6.875 10.1658 6.875 10V8.57687ZM7.5 0C7.33424 0 7.17527 0.065848 7.05806 0.183058C6.94085 0.300269 6.875 0.45924 6.875 0.625C6.875 0.79076 6.94085 0.949732 7.05806 1.06694C7.17527 1.18415 7.33424 1.25 7.5 1.25C9.1576 1.25 10.7473 1.90848 11.9194 3.08058C13.0915 4.25269 13.75 5.8424 13.75 7.5C13.75 9.1576 13.0915 10.7473 11.9194 11.9194C10.7473 13.0915 9.1576 13.75 7.5 13.75C7.33424 13.75 7.17527 13.8158 7.05806 13.9331C6.94085 14.0503 6.875 14.2092 6.875 14.375C6.875 14.5408 6.94085 14.6997 7.05806 14.8169C7.17527 14.9342 7.33424 15 7.5 15C9.48912 15 11.3968 14.2098 12.8033 12.8033C14.2098 11.3968 15 9.48912 15 7.5C15 5.51088 14.2098 3.60322 12.8033 2.1967C11.3968 0.790176 9.48912 0 7.5 0ZM1.14188 4.24C1.01826 4.24 0.897425 4.27666 0.794644 4.34533C0.691863 4.41401 0.611755 4.51162 0.564451 4.62582C0.517146 4.74003 0.504769 4.86569 0.528884 4.98693C0.553 5.10817 0.612526 5.21953 0.699934 5.30694C0.787341 5.39435 0.898706 5.45387 1.01994 5.47799C1.14118 5.50211 1.26685 5.48973 1.38105 5.44242C1.49526 5.39512 1.59287 5.31501 1.66154 5.21223C1.73022 5.10945 1.76688 4.98861 1.76688 4.865C1.76688 4.69924 1.70103 4.54027 1.58382 4.42306C1.46661 4.30585 1.30764 4.24 1.14188 4.24ZM1.25 7.5C1.25 7.37639 1.21334 7.25555 1.14467 7.15277C1.07599 7.04999 0.978381 6.96988 0.864177 6.92257C0.749974 6.87527 0.624307 6.86289 0.503069 6.88701C0.381831 6.91112 0.270466 6.97065 0.183059 7.05806C0.0956507 7.14547 0.0361252 7.25683 0.0120095 7.37807C-0.0121063 7.49931 0.000270801 7.62497 0.0475756 7.73918C0.0948803 7.85338 0.174988 7.95099 0.277769 8.01967C0.38055 8.08834 0.501387 8.125 0.625 8.125C0.790761 8.125 0.949732 8.05915 1.06694 7.94194C1.18415 7.82473 1.25 7.66576 1.25 7.5ZM2.63813 2.00437C2.51451 2.00437 2.39367 2.04103 2.29089 2.10971C2.18811 2.17838 2.10801 2.27599 2.0607 2.3902C2.0134 2.5044 2.00102 2.63007 2.02513 2.75131C2.04925 2.87254 2.10878 2.98391 2.19618 3.07132C2.28359 3.15872 2.39496 3.21825 2.51619 3.24237C2.63743 3.26648 2.7631 3.2541 2.8773 3.2068C2.99151 3.15949 3.08912 3.07939 3.15779 2.97661C3.22647 2.87383 3.26313 2.75299 3.26313 2.62937C3.26313 2.46361 3.19728 2.30464 3.08007 2.18743C2.96286 2.07022 2.80389 2.00437 2.63813 2.00437ZM4.86188 0.525625C4.73826 0.525625 4.61742 0.562281 4.51464 0.630957C4.41186 0.699632 4.33176 0.797244 4.28445 0.911448C4.23715 1.02565 4.22477 1.15132 4.24888 1.27256C4.273 1.39379 4.33253 1.50516 4.41993 1.59257C4.50734 1.67997 4.61871 1.7395 4.73994 1.76362C4.86118 1.78773 4.98685 1.77535 5.10105 1.72805C5.21526 1.68074 5.31287 1.60064 5.38154 1.49786C5.45022 1.39508 5.48688 1.27424 5.48688 1.15062C5.48688 0.984865 5.42103 0.825894 5.30382 0.708683C5.18661 0.591473 5.02764 0.525625 4.86188 0.525625ZM1.14188 9.51C1.01826 9.51 0.897425 9.54666 0.794644 9.61533C0.691863 9.68401 0.611755 9.78162 0.564451 9.89582C0.517146 10.01 0.504769 10.1357 0.528884 10.2569C0.553 10.3782 0.612526 10.4895 0.699934 10.5769C0.787341 10.6643 0.898706 10.7239 1.01994 10.748C1.14118 10.7721 1.26685 10.7597 1.38105 10.7124C1.49526 10.6651 1.59287 10.585 1.66154 10.4822C1.73022 10.3795 1.76688 10.2586 1.76688 10.135C1.76688 9.96924 1.70103 9.81027 1.58382 9.69306C1.46661 9.57585 1.30764 9.51 1.14188 9.51ZM2.63813 11.7456C2.51451 11.7456 2.39367 11.7823 2.29089 11.851C2.18811 11.9196 2.10801 12.0172 2.0607 12.1314C2.0134 12.2457 2.00102 12.3713 2.02513 12.4926C2.04925 12.6138 2.10878 12.7252 2.19618 12.8126C2.28359 12.9 2.39496 12.9595 2.51619 12.9836C2.63743 13.0077 2.7631 12.9954 2.8773 12.948C2.99151 12.9007 3.08912 12.8206 3.15779 12.7179C3.22647 12.6151 3.26313 12.4942 3.26313 12.3706C3.26313 12.2049 3.19728 12.0459 3.08007 11.9287C2.96286 11.8115 2.80389 11.7456 2.63813 11.7456ZM4.86188 13.2244C4.73826 13.2244 4.61742 13.261 4.51464 13.3297C4.41186 13.3984 4.33176 13.496 4.28445 13.6102C4.23715 13.7244 4.22477 13.8501 4.24888 13.9713C4.273 14.0925 4.33253 14.2039 4.41993 14.2913C4.50734 14.3787 4.61871 14.4383 4.73994 14.4624C4.86118 14.4865 4.98685 14.4741 5.10105 14.4268C5.21526 14.3795 5.31287 14.2994 5.38154 14.1966C5.45022 14.0938 5.48688 13.973 5.48688 13.8494C5.48688 13.6836 5.42103 13.5246 5.30382 13.4074C5.18661 13.2902 5.02764 13.2244 4.86188 13.2244Z' fill='%23D7162E'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1249_4269'%3E%3Crect width='15' height='15' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") !important;
+      }
     }
     .notif-close-btn {
       cursor: pointer;
@@ -1218,247 +1257,283 @@ input[type="number"] {
   }
 }
 
-
-
 // ───────────────────────────────── Start **ServicePage
 // ---------------------------------------------------
-.service-landing{
-    height: 100%;
-    overflow-x: auto;
-    .card-box{
-        height: calc(100% - 25px);
-        overflow-y: auto;
-        border-radius: 25px;
-        border: none;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.082);
-        background-color: white;
-        padding: 40px 20px 20px 20px;
+.service-landing {
+  height: 100%;
+  overflow-x: auto;
+  .card-box {
+    height: calc(100% - 25px);
+    overflow-y: auto;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.082);
+    background-color: white;
+    padding: 40px 20px 20px 20px;
+  }
+  .card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    border-bottom: 2px solid #f5f4f2;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    .back-btn {
+      width: 25px;
     }
-    .card-title{
+  }
+}
+.base-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px dotted #d9d9d9;
+    padding: 10px 5px;
+  }
+  .menu-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #646464;
+  }
+  .menu-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    margin-left: 10px;
+    padding: 5px;
+    svg {
+      width: 25px;
+    }
+  }
+}
+.services {
+  // height: calc(100% + 20px);
+  height: 100%;
+
+  .services-filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .filter-page {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 99;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      padding: 35px 30px;
+      transition: 0.3s;
+      &.active{
+        right: 0;
+      }
+      .filter-close-btn {
+        position: absolute;
+        left: 30px;
+        top: 45px;
+      }
+      .filter-btns {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        font-size: 14px;
-        font-weight: bold;
-        width: 100%;
-        border-bottom: 2px solid #f5f4f2;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-        .back-btn{
-            width: 25px;
+        margin-bottom: 35px;
+      }
+      .clear-filter{
+
+      }
+      .filter-btn , .clear-filter {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: #d71729;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.226);
+        cursor: pointer;
+        svg,
+        img {
+          width: 28px;
+          height: 28px;
         }
+      }
     }
-}
-.base-menu{
+    .serchbox {
+      position: relative;
+      width: 100%;
+      input {
+        width: 100%;
+        border: none;
+        height: 38px;
+        border-radius: 50px;
+        font-size: 14px;
+        color: black;
+        // color: #afafaf;
+        padding: 0 15px 0 35px;
+        outline: none;
+      }
+      .search-btn {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+      }
+    }
+    .filter-btn, .clear-filter {
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border-radius: 50%;
+      background-color: #d7162e;
+      padding: 7px 8px;
+      margin-right: 15px;
+      svg,
+      img {
+        width: 20px;
+      }
+    }
+    .clear-filter{
+        margin-right: 10px;
+    }
+  }
+
+  .services-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    li{
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        border-bottom: 1px dotted #d9d9d9;
-        padding: 10px 5px;
-    }
-    .menu-title{
-        font-size: 14px;
-        font-weight: 500;
-        color: #646464;
-    }
-    .menu-icon{
-        width: 35px;
-        height: 35px;
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    margin-top: 20px;
+  }
+  .services-item {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.096);
+    margin-bottom: 15px;
+    .services-item-title {
+      background-color: #6d6e71;
+      border-radius: 40px 0 0 40px;
+      height: 38px;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      position: relative;
+      margin-right: 15px;
+      padding: 2px;
+      padding-right: 35px;
+      padding-left: 30px;
+      span {
+        font-size: 9px;
+        font-weight: normal;
+        margin-right: 5px;
+      }
+      .customer-profile {
+        position: absolute;
+        right: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 46px;
+        height: 46px;
         border-radius: 50%;
-        background-color: #f5f5f5;
-        margin-left: 10px;
-        padding: 5px;
-        svg{
-            width: 25px;
-        }
-    }
-}
-.services{
-    // height: calc(100% + 20px);
-    height: 100%;
-    
-    .services-filter{
-        width: 100%;
+        background-image: url(../img/customer-profile.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 3px solid #6d6e71;
+      }
+      .services-consel {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        .filter-page{
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            right: 0;
-            background-color: white;
-            z-index: 99;
-            display: none;
+        svg {
+          fill: #505050;
+          height: 13px;
+          width: auto;
+          margin: 0 3px;
+          margin-top: 1px;
+          &.active path {
+            fill: #ffe941;
+          }
         }
-        .serchbox{
-            position: relative;
-            width: 100%;
-            input{
-                width: 100%;
-                border: none;
-                height: 38px;
-                border-radius: 50px;
-                font-size: 14px;
-                color: black;
-                // color: #afafaf;
-                padding: 0 15px 0 35px;
-                outline: none;
-            }
-            .search-btn{
-                position: absolute;
-                left: 10px;
-                top: 5px;
-            }
-        }
-        .filter-btn{
-            cursor: pointer;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background-color: #D7162E;
-            padding: 7px 8px;
-            margin-right: 15px;
-            svg,img {
-                width: 20px;
-            }
-        }
+      }
     }
-
-    .services-list{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        height: calc(100% - 50px);
-        overflow-y: auto;
-        margin-top: 20px;
+    .emergrncy-alarm {
+      display: block;
     }
-    .services-item{
-        border-radius: 15px;
-        background-color: white;
-        padding: 15px;
-        padding-bottom: 10px;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.096);
-        margin-bottom: 15px;
-        .services-item-title{
-            background-color: #6D6E71;
-            border-radius: 40px 0 0 40px;
-            height: 38px;
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            position: relative;
-            margin-right: 15px;
-            padding: 2px;
-            padding-right: 35px;
-            padding-left: 30px;
-            span{
-                font-size: 9px;
-                font-weight: normal;
-                margin-right: 5px;
-            }
-            .customer-profile{
-                position: absolute;
-                right: -15px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 46px;
-                height: 46px;
-                border-radius: 50%;
-                background-image: url(../img/customer-profile.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                border: 3px solid #6D6E71;
-            }
-            .services-consel{
-                display: flex;
-                align-items: center;
-                svg{
-                    fill: #505050;
-                    height: 13px;
-                    width: auto;
-                    margin: 0 3px;
-                    margin-top: 1px;
-                    &.active path{
-                        fill: #FFE941;
-                    }
-                }
-            }
+    &.emergency .services-item-title {
+      .emergrncy-alarm {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: #d9d9d9;
+        display: block;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        padding: 9px;
+        .alarm {
+          width: 10px;
+          height: 10px;
+          background-color: #d71729;
+          border-radius: 50%;
+          animation-name: alarm;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
         }
-        .emergrncy-alarm{
-            display: block;
-        }
-        &.emergency .services-item-title{
-            .emergrncy-alarm{
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background-color: #d9d9d9;
-                display: block;
-                position: absolute;
-                left: 5px;
-                top: 5px;
-                padding: 9px;
-                .alarm{
-                    width: 10px;
-                    height: 10px;
-                    background-color: #d71729;
-                    border-radius: 50%;
-                    animation-name: alarm;
-                    animation-duration: 1s;
-                    animation-iteration-count: infinite;
-                }
-            }
-
-        }
-        .services-item-content{
-            margin: 10px -5px 0 0;
-            &>div{
-                display: flex;
-               align-items: center; 
-            }
-            .services-data{
-                font-size: 10px;
-                font-weight: normal;
-                color: #9b9b9b;
-                span{
-                    color: black;
-                    font-weight: 500;
-                }
-            }
-            .services-data-icon{
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                background-color: #f5f4f2;
-                text-align: center;
-                margin-left: 5px;
-                svg,img{
-                    width: 14px;
-                    height: auto;
-                }
-            }
-        }
+      }
     }
+    .services-item-content {
+      margin: 10px -5px 0 0;
+      & > div {
+        display: flex;
+        align-items: center;
+      }
+      .services-data {
+        font-size: 10px;
+        font-weight: normal;
+        color: #9b9b9b;
+        span {
+          color: black;
+          font-weight: 500;
+        }
+      }
+      .services-data-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #f5f4f2;
+        text-align: center;
+        margin-left: 5px;
+        svg,
+        img {
+          width: 14px;
+          height: auto;
+        }
+      }
+    }
+  }
 }
 @keyframes alarm {
-    0%   {opacity: 1;}
-    50%  {opacity: 0;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 // ─────────────────────────--──────── End **ServicePage
 // ---------------------------------------------------
-
-
-
-
-
 
 // ───────────────────────────────── Start **Responsive
 // ---------------------------------------------------
@@ -1470,9 +1545,9 @@ input[type="number"] {
 }
 
 @media only screen and (max-width: 380px) {
-    .footer-list {
-        padding: 0 10px;
-    }
+  .footer-list {
+    padding: 0 10px;
+  }
 }
 @media only screen and (max-width: 350px) {
   .footer-menu .footer-item-box {
