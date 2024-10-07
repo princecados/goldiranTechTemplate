@@ -1398,7 +1398,7 @@ input[type=number] {
   transform: translate(-50%, calc(-100% + 150px));
 }
 .service-details .service-details-card .service-details-options .service-details-options-button {
-  padding: 15px;
+  padding: 15px 15px 25px 15px;
   text-align: center;
 }
 .service-details .service-details-card .service-details-options .service-details-options-list {
