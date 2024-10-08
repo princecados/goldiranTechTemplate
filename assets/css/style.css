@@ -1488,6 +1488,34 @@ input[type=number] {
   background-color: #2D9C25;
 }
 
+.map-page .services-list {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  bottom: 85px;
+  height: 155px;
+}
+.map-page .services-list .services-item {
+  height: 153px;
+  margin: 0;
+  overflow: hidden;
+}
+.map-page .services-list .seemore {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #F5F4F2;
+  color: #6d6e71;
+  height: 32px;
+  width: calc(100% + 30px);
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: -10px;
+  padding: 9px;
+  margin-top: 4px;
+}
+
 @media only screen and (min-width: 600px) {
   .login-mask {
     display: none;
